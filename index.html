@@ -23,7 +23,9 @@
         <span class="navbar__logo">INKA<span class="navbar__logo-accent"> AI Labs</span></span>
         <span class="navbar__tagline">Playbook · Kom igång med Claude Code</span>
       </a>
-      <nav class="navbar__nav" aria-label="Sektioner">
+      <input type="checkbox" id="nav-toggle" class="navbar__check">
+      <label for="nav-toggle" class="navbar__burger" aria-label="Öppna eller stäng meny"><span></span><span></span><span></span></label>
+      <nav class="navbar__nav" id="primary-nav" aria-label="Sektioner">
         <a href="#intro">Intro</a>
         <a href="#kom-igang">Kom igång</a>
         <a href="#ovningar">Övningar</a>
@@ -609,15 +611,13 @@ Gör det realistiskt och konkret. Skriv allt på svenska.</div>
 
         <figure class="videoguide">
           <h3 class="subhead">Videoguide: de viktigaste begreppen</h3>
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/ZlDnsf_DOzg"
-              title="Every Claude Code Concept Explained for Normal People"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
-          </div>
-          <figcaption>En pedagogisk genomgång av Claude Codes centrala begrepp, förklarade för den som inte är tekniker (på engelska). Bra att titta på före eller efter att du testat övningarna.</figcaption>
+          <a class="video-card" href="https://www.youtube.com/watch?v=ZlDnsf_DOzg" target="_blank" rel="noopener noreferrer" aria-label="Se videon på YouTube – öppnas i ny flik">
+            <img src="https://img.youtube.com/vi/ZlDnsf_DOzg/maxresdefault.jpg" alt="Videominiatyr: Every Claude Code Concept Explained for Normal People" loading="lazy">
+            <span class="video-card__play" aria-hidden="true">
+              <svg viewBox="0 0 68 48"><path d="M66.5 7.3a8.6 8.6 0 0 0-6-6C55.3 0 34 0 34 0S12.7 0 7.5 1.3a8.6 8.6 0 0 0-6 6A89.5 89.5 0 0 0 0 24a89.5 89.5 0 0 0 1.5 16.7 8.6 8.6 0 0 0 6 6C12.7 48 34 48 34 48s21.3 0 26.5-1.3a8.6 8.6 0 0 0 6-6A89.5 89.5 0 0 0 68 24a89.5 89.5 0 0 0-1.5-16.7z" fill="#f00"/><path d="M27 34.5 45 24 27 13.5z" fill="#fff"/></svg>
+            </span>
+          </a>
+          <figcaption>En pedagogisk genomgång av Claude Codes centrala begrepp, förklarade för den som inte är tekniker (på engelska). Klicka för att se den på YouTube – öppnas i en ny flik.</figcaption>
         </figure>
       </div>
     </section>
@@ -676,5 +676,22 @@ Gör det realistiskt och konkret. Skriv allt på svenska.</div>
     </div>
   </footer>
 
+  <script>
+    (function () {
+      // Alla externa länkar (http/https) öppnas i en ny flik
+      document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      });
+      // Stäng mobilmenyn när man klickat på en länk
+      var toggle = document.getElementById('nav-toggle');
+      var nav = document.getElementById('primary-nav');
+      if (toggle && nav) {
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('a')) toggle.checked = false;
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
