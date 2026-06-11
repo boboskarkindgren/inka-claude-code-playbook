@@ -393,6 +393,88 @@ details summary::marker { color: var(--labs-orange); }
 .glossary dd { margin: 0; font-size: .94rem; color: #4a443f; }
 
 /* ============================================================
+   SHOWCASE – Byggt med Claude Code
+   ============================================================ */
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 1.6em;
+}
+.showcase__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--labs-white);
+  border: 1px solid rgba(100,13,2,0.07);
+  border-top: 4px solid var(--labs-orange);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.showcase__card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
+.showcase__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.showcase__head h3 { margin: 0; color: var(--labs-dark-red); }
+.showcase__by {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--labs-orange);
+  white-space: nowrap;
+}
+.showcase__card > p { color: #4a443f; margin-bottom: 1em; }
+.stack {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.3em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.stack li {
+  margin: 0;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--labs-dark-red);
+  background: var(--labs-orange-soft);
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+.btn {
+  align-self: flex-start;
+  display: inline-block;
+  background: var(--labs-orange);
+  color: var(--labs-white);
+  font-weight: 700;
+  padding: 11px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .15s ease;
+}
+.btn:hover { background: #b5450f; text-decoration: none; }
+.showcase__teaser {
+  margin: 1.2em 0 0;
+  font-size: .9rem;
+  font-style: italic;
+  color: #7a736c;
+}
+.roadmap {
+  margin-top: 1.3em;
+  background: var(--labs-light-yellow);
+  border: 1px solid rgba(100,13,2,0.07);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+.roadmap strong { color: var(--labs-dark-red); }
+.roadmap ol { margin: .5em 0 0; padding-left: 1.2em; font-size: .92rem; }
+.roadmap li { margin-bottom: .3em; }
+
+/* ============================================================
    VIDEOGUIDE (inbäddad film)
    ============================================================ */
 .videoguide { margin: 2.6em 0 0; }
