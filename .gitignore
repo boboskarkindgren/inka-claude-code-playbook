@@ -1,0 +1,6 @@
+# Workshopens original-PDF (We Were Friends) – publiceras inte
+*.pdf
+
+# Skräpfiler från operativsystemet
+.DS_Store
+Thumbs.db
