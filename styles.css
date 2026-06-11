@@ -393,6 +393,35 @@ details summary::marker { color: var(--labs-orange); }
 .glossary dd { margin: 0; font-size: .94rem; color: #4a443f; }
 
 /* ============================================================
+   VIDEOGUIDE (inbäddad film)
+   ============================================================ */
+.videoguide { margin: 2.6em 0 0; }
+.videoguide .subhead { margin-top: 0; }
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(100,13,2,0.10);
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.videoguide figcaption {
+  margin-top: .9em;
+  font-size: .9rem;
+  color: #7a736c;
+  font-style: italic;
+}
+
+/* ============================================================
    GÖR SÅ HÄR / UNDVIK
    ============================================================ */
 .dos-donts {

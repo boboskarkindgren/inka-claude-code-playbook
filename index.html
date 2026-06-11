@@ -27,6 +27,7 @@
         <a href="#intro">Intro</a>
         <a href="#kom-igang">Kom igång</a>
         <a href="#ovningar">Övningar</a>
+        <a href="#koppla">Koppla på</a>
         <a href="#nasta-steg">Nästa steg</a>
         <a href="#ordlista">Ordlista</a>
         <a href="#resurser">Resurser</a>
@@ -437,8 +438,73 @@ Gör det realistiskt och konkret. Skriv allt på svenska.</div>
       </div>
     </section>
 
+    <!-- ============ KOPPLA PÅ FLER VERKTYG (MCP) ============ -->
+    <section class="section section--alt" id="koppla">
+      <div class="container">
+        <p class="phase-tag">Nivå 2 · Mer avancerat</p>
+        <h2>Koppla på fler verktyg</h2>
+        <p class="section__intro">Hittills har Claude jobbat med filerna i din mapp. När du behärskar grunderna kan du gå ett steg längre och låta Claude prata med dina <strong>riktiga verktyg</strong> – din databas, dina Slack-kanaler, din mejl, ditt projektverktyg. Möjligheterna är i praktiken oändliga.</p>
+
+        <div class="callout callout--info">
+          <strong>Tekniken bakom heter MCP (Model Context Protocol).</strong> Tänk på det som ett universellt eluttag: i stället för att Claude bara kan se din mapp, kopplar du in en "adapter" mot en tjänst – och plötsligt kan Claude läsa och göra saker där också. Du behöver inte förstå protokollet; du väljer bara vilka verktyg du vill koppla på.
+        </div>
+
+        <h3 class="subhead">Exempel på vad du kan koppla in</h3>
+        <div class="card-grid">
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+            </span>
+            <h4>Supabase / databaser</h4>
+            <p>Låt Claude läsa och skriva i din databas, köra frågor och sammanfatta vad datan säger – utan att du själv skriver SQL.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 8h8a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/><path d="M9 4v3M15 17v3"/></svg>
+            </span>
+            <h4>Slack</h4>
+            <p>Sammanfatta en kanal eller tråd, leta upp ett beslut som fattades, eller låt Claude skriva och skicka ett meddelande åt dig.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <h4>Gmail &amp; Google Drive</h4>
+            <p>Be Claude leta i dina dokument, sammanfatta en lång tråd eller förbereda ett svar baserat på filer du redan har.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            </span>
+            <h4>Notion &amp; Linear</h4>
+            <p>Hämta innehåll från dina sidor, uppdatera en wiki eller skapa och följa upp ärenden direkt från Claude.</p>
+          </article>
+        </div>
+        <p class="note">…och det här är bara början. Det finns kopplingar mot kalendrar, betaltjänster som Stripe, designverktyg, supportsystem och mycket mer – och nya tillkommer hela tiden.</p>
+
+        <h3 class="subhead">Så kopplar du på något</h3>
+        <p>Det finns två vägar, beroende på hur tekniskt du vill ha det:</p>
+        <ol class="steps">
+          <li>
+            <h4>Färdiga connectors &amp; plugins (enklast)</h4>
+            <p>I Claude-appen kan du lägga till färdiga kopplingar. Klicka på <strong>+</strong> bredvid chatrutan och leta efter Connectors/Plugins. Många populära tjänster finns färdiga – du loggar in en gång och godkänner åtkomsten, sedan är de igång.</p>
+          </li>
+          <li>
+            <h4>Egna MCP-servrar (för det som inte finns färdigt)</h4>
+            <p>Finns inte tjänsten som en färdig connector kan du lägga till en MCP-server själv. Enklast är att be Claude om hjälp – t.ex. med prompten nedan – så guidar den dig genom installation och inloggning, precis som med GitHub i övning 6.</p>
+            <div class="prompt">Jag vill koppla Claude Code till [t.ex. Supabase / Slack]. Kan du hjälpa mig hitta rätt MCP-server, installera den och logga in, steg för steg? Jag ger dig access när det behövs.</div>
+          </li>
+        </ol>
+
+        <div class="callout">
+          <strong>Tänk på behörigheter och känslig data.</strong> En koppling ger Claude åtkomst till en riktig tjänst. Börja smått, godkänn ett steg i taget, och koppla inte in system med känslig kund- eller persondata förrän du är trygg med hur det fungerar. Samma försiktighet som i avsnittet <a href="#tips">Tips och vanliga fallgropar</a>.
+        </div>
+        <p class="note">Aktuella steg och vilka connectors som finns just nu hittar du på <a href="https://support.claude.com">support.claude.com</a> – utbudet växer löpande.</p>
+      </div>
+    </section>
+
     <!-- ============ NÄSTA STEG ============ -->
-    <section class="section section--alt" id="nasta-steg">
+    <section class="section" id="nasta-steg">
       <div class="container">
         <h2>Fortsätt på egen hand</h2>
         <p class="section__intro">Nu har du grunden. Här är sex idéer för att fortsätta utforska Claude Code i din egen vardag. Välj det som passar din roll bäst.</p>
@@ -493,6 +559,19 @@ Gör det realistiskt och konkret. Skriv allt på svenska.</div>
           <div><dt>Flaggor (Flags)</dt><dd>Tillägg du kan skriva efter <code>claude</code> när du startar en session, t.ex. <code>claude --chrome</code> eller <code>claude --model opus</code>. Se alla med <code>claude --help</code>.</dd></div>
           <div><dt>Chrome-integrering (--chrome)</dt><dd>Med <code>claude --chrome</code> (eller <code>/chrome</code>) kan Claude styra din webbläsare: klicka, fylla i formulär och testa webbappar. Kräver tillägget "Claude in Chrome" från Chrome Web Store.</dd></div>
         </dl>
+
+        <figure class="videoguide">
+          <h3 class="subhead">Videoguide: de viktigaste begreppen</h3>
+          <div class="video-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/ZlDnsf_DOzg"
+              title="Every Claude Code Concept Explained for Normal People"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
+          <figcaption>En pedagogisk genomgång av Claude Codes centrala begrepp, förklarade för den som inte är tekniker (på engelska). Bra att titta på före eller efter att du testat övningarna.</figcaption>
+        </figure>
       </div>
     </section>
 
